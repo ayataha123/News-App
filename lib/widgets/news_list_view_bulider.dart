@@ -7,11 +7,9 @@ import 'package:news_app_ui_setup/widgets/news_list_view.dart';
 class NewsListViewBulider extends StatelessWidget {
   const NewsListViewBulider({super.key, required this.category});
   final String category;
-
-
   @override
   Widget build(BuildContext context) {
-    BlocProvider.of<GetNewsCubit>(context).getGenralNews(catogery:category );
+     BlocProvider.of<GetNewsCubit>(context).getGenralNews(catogery:category );
     return BlocBuilder<GetNewsCubit, GetNewsState>(
       builder: (context, state) {
         if (state is GetNewsLoading) {
